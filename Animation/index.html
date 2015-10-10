@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <title>动画</title>
+    <style>
+        /*仿写1*/
+        #animated_my1,
+        #animated_my2,
+        #animated_my3
+        {
+            width:60px;
+            height:40px;
+            background:#92B901;
+            color:#ffffff;
+            position:absolute;
+            font-weight:bold;
+            font:bold 12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+            padding:20px 10px 0px 10px;
+            border-radius:5px;
+            -webkit-border-radius:5px;          
+        }
+        p {
+            -webkit-transform: translate(-500px,0);
+            transform: translate(-500px,0);
+        }
+        .animated_my1 
+        {
+            -webkit-transform: translate(100px,200px);
+            transform: translate(100px,200px);
+            animation:animated_my1 5s;
+            -webkit-animation:animated_my1 5s;
+        }
+        @keyframes animated_my1
+        {
+            0%  {transform:translate(-100px,0) rotate(0deg);}
+            25% {transform:translate(0px,0) rotate(0deg);}
+            30% {transform:translate(0px,0) rotate(20deg);}  
+            100% {transform:translate(100px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+
+        @-webkit-keyframes animated_my1
+        {
+            0%  {-webkit-transform: translate(-100px,0) rotate(0deg);}
+            25% {-webkit-transform: translate(0px,0) rotate(0deg);}  
+            30% {-webkit-transform:translate(0px,0) rotate(20deg);}        
+            100% {-webkit-transform: translate(100px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+        /*仿写2*/
+        .animated_my2
+        {
+             -webkit-transform: translate(300px,200px);
+            transform: translate(300px,200px);
+            animation:animated_my2 5s;
+            -webkit-animation:animated_my2 5s;
+        }
+        @keyframes animated_my2
+        {
+            0%  {transform:translate(-100px,0) rotate(0deg);}
+            25% {transform:translate(0px,0) rotate(0deg);}
+            30% {transform:translate(0px,0) rotate(40deg);}  
+            100% {transform:translate(300px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+
+        @-webkit-keyframes animated_my2
+        {
+            0%  {-webkit-transform: translate(-100px,0) rotate(0deg);}
+            25% {-webkit-transform: translate(0px,0) rotate(0deg);} 
+            30% {-webkit-transform:translate(0px,0) rotate(40deg);} 
+            100% {-webkit-transform: translate(300px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+        /*仿写3*/
+        .animated_my3
+        {
+            -webkit-transform: translate(500px,200px);
+            transform: translate(500px,200px);
+            animation:animated_my3 5s;
+            -webkit-animation:animated_my3 5s;
+        }
+        @keyframes animated_my3
+        {
+            0%  {transform:translate(-100px,0) rotate(0deg);}
+            25% {transform:translate(50px,0) rotate(0deg);}  
+            30% {transform:translate(50px,0) rotate(20deg);}  
+            100% {transform:translate(500px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+
+        @-webkit-keyframes animated_my3
+        {
+            0%  {-webkit-transform: translate(-100px,0) rotate(0deg);}
+            25% {-webkit-transform: translate(50px,0) rotate(0deg);}
+            30% {-webkit-transform:translate(50px,0) rotate(20deg);} 
+            100% {-webkit-transform: translate(500px,200px) rotate(360deg);background:#1ec7e6;}
+        }
+    </style>
+</head>
+<body>
+    <p id="animated_my1">my1 动画</p>
+    <p id="animated_my2">my2 动画</p>
+    <p id="animated_my3">my3 动画</p>
+    <script>
+        var animy1=document.getElementById('animated_my1');
+        var animy2=document.getElementById('animated_my2');
+        var animy3=document.getElementById('animated_my3');
+        window.onload=function(){
+            animy1.className="animated_my1";
+            setTimeout(function(){
+                animy2.className="animated_my2";
+            }, 2000)
+            setTimeout(function(){
+             animy3.className="animated_my3";
+         }, 4000)
+            
+        }
+    </script>
+</body>
+</html>
